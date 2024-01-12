@@ -9,6 +9,7 @@ import { Button, Input } from "@/components/atomics"
 import { Layout } from "@/components/templates"
 import { CheckIcon } from "@/assets/icons"
 import { GoogleLogo } from "@/assets/brands"
+import { setCookie } from "cookies-next"
 
 const AuthLogin = () => {
   // ---------------------------------------------------
@@ -70,12 +71,19 @@ const AuthLogin = () => {
             Forgot password?
           </Link>
         </div>
-
+        {/* ///// create form from matrial and react hook form  */}
+        {/* call api and get acces token and refresh token and role of user */}
         <Button
           size='lg'
           variant='primary-bg'
           className='w-full'
-          onClick={() => router.push("/")}
+          onClick={() => {
+            router.push("/banner")
+            setCookie(
+              "access_token",
+              "ancnxaxmasdasasfsaafsfsafssfasf"
+            )
+          }}
         >
           Login
         </Button>
